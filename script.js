@@ -33,11 +33,6 @@ function changeStyleBasedOnTime() {
     //* 5. On réinitialise les classes sur element, c'est-à-dire que l'on .remove toutes les classes potentielles qui ont été ajoutées sur cet élément
 
             element.classList.remove("aurore", "matin", "apres-midi", "soiree", "nuit")
-            console.log(element)
-
-
-
-
 
     //**! 6. ICI on veut une condition pour appliquer la classe appropriée en fonction de la variable currentHour (l'heure actuelle) */
     //* On va appliquer la classe aurore, matin, apres-midi, soiree, ou nuit en fonction de l'heure de la journée
@@ -51,6 +46,18 @@ function changeStyleBasedOnTime() {
             //* Soirée : 18h-22h
             //* Nuit : 22h-5h
 
+            if (currentHour >= 5 && currentHour <= 8){
+                element.classList.add("aurore")
+            }else if (currentHour >= 8 && currentHour <= 12){
+                element.classList.add("matin")
+            }else if (currentHour >= 12 && currentHour <= 18){
+                element.classList.add("apres-midi")
+            }else if (currentHour >= 18 && currentHour <= 22){
+                element.classList.add("soiree")
+            }else{
+                element.classList.add("nuit")
+            }
+}
 
 
 
@@ -67,7 +74,8 @@ function changeStyleBasedOnTime() {
 
 
 
-} // Fin de la fonction
+
+ // Fin de la fonction
 
 //**! /!\ Ne pas toucher /!\
 //**! /!\ DÉBUT /!\
